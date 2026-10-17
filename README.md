@@ -1,3 +1,19 @@
+# IELTS Studio
+
+A browser-based IELTS Academic simulator with complete mock exams, timed individual practice, local progress tracking, microphone recording, and answer review.
+
+The browser application is in **`web/`**. See [setup, features, and limitations](README-SIMULATOR.md). It is prepared for Vercel with `web` as the project root.
+
+```sh
+cd web
+npm ci
+npm run dev
+```
+
+This project extends the MIT-licensed IELTS Mastery Hub by Open Lingua. The original desktop application, seed content and copyright notices are preserved below and in the source.
+
+---
+
 <h1 align="center">
   <code>@open-lingua/ielts-mastery-hub</code>
 </h1>

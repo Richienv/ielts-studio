@@ -1,0 +1,78 @@
+{
+  "counts": {
+    "reading": 10,
+    "listening": 3,
+    "writing": 6
+  },
+  "warnings": [],
+  "repairs": [
+    {
+      "test": "IELTS Academic Reading: Agriculture, Biology & Psychology (Band 6)",
+      "question": 5,
+      "repair": "Replaced incorrectly numbered table header with a one-word passage completion."
+    },
+    {
+      "test": "IELTS Academic Reading: Innovation, Agriculture & Psychology (Band 6)",
+      "question": 5,
+      "repair": "Replaced incorrectly numbered table header with a one-word passage completion."
+    },
+    {
+      "test": "IELTS Academic Reading: Innovation, Agriculture & Psychology (Band 6)",
+      "repair": "Q10\u201313: raised two-word limit to three to allow center of gravity."
+    },
+    {
+      "test": "IELTS Academic Reading: Commerce, Ecology & Psychology (Band 7)",
+      "question": 5,
+      "repair": "Replaced incorrectly numbered table header with a one-word passage completion."
+    },
+    {
+      "test": "IELTS Academic Reading: Engineering, Acoustics & Zoology (Band 7)",
+      "question": 5,
+      "repair": "Replaced incorrectly numbered table header with a one-word passage completion."
+    },
+    {
+      "test": "IELTS Academic Reading: Engineering, Neuroscience & Psychology (Band 7)",
+      "question": 5,
+      "repair": "Replaced incorrectly numbered table header with a one-word passage completion."
+    },
+    {
+      "test": "IELTS Academic Reading Practice: Advanced Sciences (Band 8)",
+      "repair": "Final summary: raised one-word limit to two to allow readiness potential."
+    },
+    {
+      "test": "IELTS Academic Reading: Geopolitics, Psycholinguistics & Epistemology (Band 8)",
+      "question": 5,
+      "repair": "Replaced incorrectly numbered table header with a one-word passage completion."
+    },
+    {
+      "test": "IELTS Academic Reading: Linguistics, Astrobiology & Epistemology (Band 8)",
+      "question": 5,
+      "repair": "Replaced incorrectly numbered table header with a one-word passage completion."
+    },
+    {
+      "test": "IELTS Academic Reading Mastery: Epigraphy, Digital Economics & Quantum Biology (Band 9)",
+      "question": 5,
+      "repair": "Replaced incorrectly numbered table header with a one-word passage completion."
+    },
+    {
+      "test": "IELTS Academic Reading: Quantum Metrology, Historiography & Artificial Ontology (Band 9)",
+      "question": 5,
+      "repair": "Replaced incorrectly numbered table header with a one-word passage completion."
+    }
+  ],
+  "types": [
+    "form-completion",
+    "matching",
+    "matching-headings",
+    "matching-information",
+    "matching-sentence-endings",
+    "multiple-choice",
+    "note-completion",
+    "sentence-completion",
+    "short-answer",
+    "summary-completion",
+    "table-completion",
+    "true-false-not-given",
+    "yes-no-not-given"
+  ]
+}

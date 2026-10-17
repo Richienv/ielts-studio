@@ -58,3 +58,6 @@ src/core/target/
 # Local files
 *.local.*
 dev.db
+
+# Vercel project links and local deployment state
+.vercel/
