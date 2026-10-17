@@ -1,5 +1,7 @@
 # IELTS Studio
 
+[Open the live simulator](https://ielts-studio-teal.vercel.app)
+
 A browser-based IELTS Academic simulator with complete mock exams, timed individual practice, local progress tracking, microphone recording, and answer review.
 
 The browser application is in **`web/`**. See [setup, features, and limitations](README-SIMULATOR.md). It is prepared for Vercel with `web` as the project root.

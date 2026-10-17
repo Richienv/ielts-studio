@@ -1,6 +1,6 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
-import { SPEAKING } from './src/engine';
-import { assessmentMp3 } from './audio-transcode';
+import { SPEAKING } from './src/engine.js';
+import { assessmentMp3 } from './audio-transcode.js';
 interface Input {skill:'writing'|'speaking';tasks?:{number:number;prompt:string;response:string;figureDescription:string}[];audio?:{step:number;mimeType:string;base64:string}[]}
 const schema={type:'object',properties:{estimatedBand:{type:'number'},criteria:{type:'array',items:{type:'object',properties:{name:{type:'string'},band:{type:'number'},feedback:{type:'string'}},required:['name','band','feedback']}},strengths:{type:'array',items:{type:'string'}},improvements:{type:'array',items:{type:'string'}},notice:{type:'string'}},required:['estimatedBand','criteria','strengths','improvements','notice']};
 export function createAssessmentHandler(env:Record<string,string> = {}) {
