@@ -1,7 +1,8 @@
 import { Flag, Check, X } from 'lucide-react';
 import type { Group, Question } from './types';
 import { correct, wordLimit } from './engine';
-interface Props { groups:Group[];answers:Record<string,string>;flags:string[];onAnswer:(id:string,value:string)=>void;onFlag:(id:string)=>void;review?:boolean;activeId?:string }
+import { QuestionStrategy } from './Band9Playbook';
+interface Props { groups:Group[];answers:Record<string,string>;flags:string[];onAnswer:(id:string,value:string)=>void;onFlag:(id:string)=>void;review?:boolean;reviewSkill?:'reading'|'listening';activeId?:string }
 export function QuestionGroups(props:Props) {
   return <div className="question-groups">{props.groups.map(group=>{
     const qs=group.questions;const first=qs[0];if(!first)return null;
@@ -31,8 +32,8 @@ function AnswerField({q,group,answers,onAnswer,review}:{q:Question;group:Group}&
   if(options.length)return <select aria-label={`Answer ${q.number}`} value={answers[q.id]??''} onChange={e=>onAnswer(q.id,e.target.value)} disabled={review}><option value="">Select an answer</option>{options.map(o=><option value={o.value} key={o.value}>{o.label}</option>)}</select>;
   return <input className="answer-input" aria-label={`Answer ${q.number}`} value={answers[q.id]??''} onChange={e=>onAnswer(q.id,e.target.value)} autoComplete="off" autoCapitalize="off" spellCheck={false} readOnly={review} placeholder={wordLimit(group)?`${wordLimit(group)} word${wordLimit(group)>1?'s':''} maximum`:'Type your answer'}/>;
 }
-function QuestionMeta({q,group,answers,review,flags,onFlag}:{q:Question;group:Group}&Props) {
+function QuestionMeta({q,group,answers,review,reviewSkill,flags,onFlag}:{q:Question;group:Group}&Props) {
   if(!review)return null;
   const ok=correct(q,answers[q.id]??'',group);
-  return <div className={`answer-feedback ${ok?'right':'wrong'}`}>{ok?<Check size={15}/>:<X size={15}/>}<span>Question {q.number}: {ok?'Correct':`Correct answer: ${q.answer}`}{!ok&&<small>Your answer: {answers[q.id]||'Unanswered'}</small>}</span>{flags.includes(q.id)&&<button className="text-button" onClick={()=>onFlag(q.id)}>Flagged</button>}</div>;
+  return <><div className={`answer-feedback ${ok?'right':'wrong'}`}>{ok?<Check size={15}/>:<X size={15}/>}<span>Question {q.number}: {ok?'Correct':`Correct answer: ${q.answer}`}{!ok&&<small>Your answer: {answers[q.id]||'Unanswered'}</small>}</span>{flags.includes(q.id)&&<button className="text-button" onClick={()=>onFlag(q.id)}>Flagged</button>}</div>{reviewSkill&&<QuestionStrategy skill={reviewSkill} type={group.type}/>}</>;
 }
